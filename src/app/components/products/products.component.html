@@ -1,0 +1,19 @@
+<section class="produtos-container">
+      <div>
+        <div class="produtos">
+          <div class="produto" *ngFor="let item of collectionProducts">
+              <div class="image">
+                  <img [src]="item.images[0]" alt="" />
+              </div>
+              <h2 class="titulo">Apartamento para {{ item.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}</h2>
+              <p class="preco">Valor: {{ item.pricingInfos.price }}</p>
+              <div class="info">
+                  <p>{{ item.usableAreas }} m²</p>
+                  <p>{{ item.bedrooms }} {{ item.bedrooms > 1 ? 'quartos' : 'quarto' }}</p>
+                  <p>{{ item.bathrooms }} {{ item.bathrooms > 1 ? 'banheiros' : 'banheiro' }}</p>
+                  <p>{{ item.parkingSpaces }} {{ item.parkingSpaces > 1 ? 'vagas' : 'vaga' }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+  </section>

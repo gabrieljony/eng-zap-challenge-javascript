@@ -1,0 +1,54 @@
+.produtos-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .produtos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+    margin: 30px;
+  }
+  
+  .produto {
+    box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    transition: all 0.2s;
+    .image {
+        display: flex;
+        justify-content: center;
+    }
+  }
+  
+  .produto:hover {
+    box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
+    transform: scale(1.1);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .produto img {
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .titulo {
+    color: var(--gray-900);
+    margin-bottom: 10px;
+  }
+  
+  .preco {
+    color: var(--yellow);
+    font-weight: bold;
+  }
+
+  .info {
+    color: var(--gray-300);
+    font-weight: bold;
+  }
+  
+  .sem-resultados {
+    text-align: center;
+  }
