@@ -16,7 +16,7 @@ export class ProductsService {
       .get<any>(this.url)
       .toPromise()
       .then((response: ProductObject[]) => {
-        console.log(response)
+        response = this.ineligibility(response);
         if (type === 'zap') {
           return response.filter(item =>
             item.pricingInfos.businessType === 'SALE' && Number(item.pricingInfos.price) >= 600000 ||
@@ -28,5 +28,9 @@ export class ProductsService {
         }
         return response;
       });
+  }
+
+  ineligibility(list: ProductObject[]): ProductObject[] {
+    return list.filter(item => !(item.address.geoLocation.location.lat === 0 && item.address.geoLocation.location.lon === 0))
   }
 }
