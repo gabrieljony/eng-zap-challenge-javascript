@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/service/products.service';
 
 @Component({
@@ -10,10 +11,20 @@ export class ProductsComponent implements OnInit {
 
   collectionProducts = new Array()
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private route: ActivatedRoute,
+    private productsService: ProductsService) { }
 
-  async ngOnInit() {
-    await this.productsService.getListProducts().then((item) => {
+  ngOnInit() {
+    console.log(this.route.queryParams)
+    if (this.route.snapshot.params['slug']) {
+      this.getListProducts(this.route.snapshot.params['slug'])
+    }
+
+  }
+
+  async getListProducts(portal: string) {
+    console.log('portal', portal)
+    await this.productsService.getListProducts(portal).then((item) => {
       this.collectionProducts = item;
 
       console.log(this.collectionProducts);
