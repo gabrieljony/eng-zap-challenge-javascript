@@ -1,9 +1,9 @@
 <ul *ngIf="paginasTotal() > 1">
-  <a [ngClass]="{disabled: btnFirst}" (click)="nextPage(1)">{{ '<<' }}</a>
-      <a [ngClass]="{disabled: btnFirst}" (click)="nextPage(page, 'subt')">{{ '<' }}</a>
-          <li *ngFor="let pagina of paginas()">
-            <a [ngClass]="{active: page == pagina}" (click)="nextPage(pagina)">{{ pagina }}</a>
-          </li>
-          <a [ngClass]="{disabled: btnLast}" (click)="nextPage(page, 'add')">{{ '>' }}</a>
-          <a [ngClass]="{disabled: btnLast}" (click)="nextPage(paginasTotal())">{{ '>>' }}</a>
+  <a [ngClass]="{disabled: btnFirst}" (click)="nextPage(1)">&#10094;&#10094;</a>
+  <a [ngClass]="{disabled: btnFirst}" (click)="nextPage(page, 'subt')">&#10094;</a>
+  <li *ngFor="let pagina of paginas()">
+    <a [ngClass]="{active: page == pagina}" (click)="nextPage(pagina)">{{ pagina }}</a>
+  </li>
+  <a [ngClass]="{disabled: btnLast}" (click)="nextPage(page, 'add')">&#10095;</a>
+  <a [ngClass]="{disabled: btnLast}" (click)="nextPage(paginasTotal())">&#10095;&#10095;</a>
 </ul>
