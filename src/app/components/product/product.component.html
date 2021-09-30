@@ -34,12 +34,41 @@
       </div>
     </div>
     <div class="address">
-      <p>{{ product.address.neighborhood + ' - ' + product.address.city }}</p>
+      <p *ngIf="product.address.neighborhood;else noNeighborhood">{{ product.address.neighborhood + ' - ' +
+        product.address.city }}</p>
+      <ng-template #noNeighborhood>
+        <p></p>
+      </ng-template>
     </div>
 
     <div class="pricingInfos">
-      <p>IPTU: {{ product.pricingInfos.yearlyIptu | currency }}</p>
-      <p>Taxa mensal do condomínio: {{ product.pricingInfos.monthlyCondoFee | currency }}</p>
+      <p *ngIf="product.pricingInfos.yearlyIptu && product.pricingInfos.yearlyIptu !== '0';else noYearlyIptu">IPTU: {{
+        product.pricingInfos.yearlyIptu | currency
+        }}</p>
+      <ng-template #noYearlyIptu>
+        <p>IPTU não informado</p>
+      </ng-template>
+      <p
+        *ngIf="product.pricingInfos.monthlyCondoFee && product.pricingInfos.monthlyCondoFee !== '0';else noMonthlyCondoFee">
+        Taxa mensal do condomínio: {{
+        product.pricingInfos.monthlyCondoFee | currency }}</p>
+      <ng-template #noMonthlyCondoFee>
+        <p>Condomínio não informado</p>
+      </ng-template>
+    </div>
+    <hr>
+    <div class="props">
+      <a class="vivareal">
+        <img *ngIf="portal === 'vivareal'" src="../../../assets/images/logo_vivareal.png" alt="logo vivareal">
+      </a>
+      <a>
+        <img *ngIf="portal === 'zap'" src="../../../assets/images/logo_zap.png" alt="logo zap">
+      </a>
+    </div>
+
+    <div class="shared">
+      <button>Favoritar</button>
+      <button>Compartilhar</button>
     </div>
 
   </div>

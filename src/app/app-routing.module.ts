@@ -14,6 +14,7 @@ const routes: Routes = [
     path: 'products',
     loadChildren: () => import('./components/products/products.module').then(m => m.ProductsModule),
   },
+  { path: 'page-not-found', component: PageNotFoundComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

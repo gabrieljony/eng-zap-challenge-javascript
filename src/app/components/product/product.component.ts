@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductsService } from '../../service/products.service';
 import { ProductObject } from '../../models/product.model';
@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
   product: ProductObject;
 
   constructor(private route: ActivatedRoute,
+    private router: Router,
     private productsService: ProductsService) { }
 
   ngOnInit(): void {
@@ -27,13 +28,9 @@ export class ProductComponent implements OnInit {
         this.portal = params['slug'];
       }
     )
-    console.log('this.portal', this.portal)
-    console.log('this.id', this.id)
     this.product = this.productsService.findProducts(this.id);
-    console.log('this.product', this.product)
-    if (!this.product) {
-      console.log('!this.product', !this.product)
-
+    if (this.product === null) {
+      this.router.navigate(['/page-not-found'])
     }
 
   }

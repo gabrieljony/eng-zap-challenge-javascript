@@ -58,6 +58,6 @@ export class ProductsService {
   }
 
   findProducts(id: string): ProductObject {
-    return this.products.find(item => item.id === id);
+    return this.products ? this.products.find(item => item.id === id) : null;
   }
 }
