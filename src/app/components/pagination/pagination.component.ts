@@ -35,22 +35,17 @@ export class PaginationComponent implements OnInit {
   }
 
   paginas() {
-    const current = Number(this.page);//7
+    const current = Number(this.page);
     const range = 9;
     const offset = Math.ceil(range / 2);
-    // console.log('offset', offset)
     const total = this.paginasTotal();
-    // console.log('total', total)
     const pagesArray = [];
 
     for (let i = 1; i <= total; i++) {
       pagesArray.push(i);
     }
-
-    // pagesArray.splice(0, current - offset);
-    // pagesArray.splice(range, total);
-
-    // console.log('pagesArray', pagesArray)
+    pagesArray.splice(0, current - offset);
+    pagesArray.splice(range, total);
     return pagesArray;
   }
 

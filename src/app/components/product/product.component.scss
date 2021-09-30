@@ -1,18 +1,15 @@
 .container {
   .banner{
-    height: 800px;
     display: flex;
-    img {
-      position: relative;
-      width: 100%;
-    }
+    justify-content: center;
+    height: 300px;
   }
   .content {
     max-width: 1000px;
     margin: 0 auto;
     background-color: var(--white);
     padding: 1rem;
-    height: calc(100vh - 800px - 5rem);
+    height: calc(100vh - 300px - 5rem);
     .titulo {
       color: var(--gray-900);
       margin-bottom: 10px;
@@ -97,4 +94,12 @@
 
     }
   }
+}
+
+@media (max-width: 1080px){
+
+}
+
+@media (max-width: 720px){
+
 }

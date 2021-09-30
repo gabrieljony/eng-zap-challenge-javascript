@@ -1,6 +1,6 @@
 <div class="container">
   <div class="banner">
-    <img [src]="product.images[0]" alt="imóvel">
+    <app-slide-show [collectionImage]="product.images"></app-slide-show>
   </div>
   <div class="content">
     <div class="titulo">
@@ -58,11 +58,11 @@
     </div>
     <hr>
     <div class="props">
-      <a class="vivareal">
-        <img *ngIf="portal === 'vivareal'" src="../../../assets/images/logo_vivareal.png" alt="logo vivareal">
+      <a class="vivareal" *ngIf="portal === 'vivareal'">
+        <img src="../../../assets/images/logo_vivareal.png" alt="logo vivareal">
       </a>
-      <a>
-        <img *ngIf="portal === 'zap'" src="../../../assets/images/logo_zap.png" alt="logo zap">
+      <a *ngIf="portal === 'zap'">
+        <img src="../../../assets/images/logo_zap.png" alt="logo zap">
       </a>
     </div>
 
