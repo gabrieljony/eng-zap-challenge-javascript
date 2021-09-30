@@ -9,18 +9,21 @@ export class ProductsService {
 
   private url: string = "http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources/source-1.json"
 
-  minlon = -46.693419;
-  minlat = -23.568704;
-  maxlon = -46.641146;
-  maxlat = -23.546686;
+  private minlon = -46.693419;
+  private minlat = -23.568704;
+  private maxlon = -46.641146;
+  private maxlat = -23.546686;
+
+  private products: ProductObject[];
 
   constructor(private http: HttpClient) { }
 
-  getListProducts(type: string) {
+  getListProducts(type: string = null) {
     return this.http
       .get<any>(this.url)
       .toPromise()
       .then((response: ProductObject[]) => {
+        this.products = response;
         response = this.ineligibilityLatLon(response);
         if (type === 'zap') {
           response = response.filter(item =>
@@ -37,24 +40,24 @@ export class ProductsService {
       });
   }
 
-  ineligibilityLatLon(list: ProductObject[]): ProductObject[] {
+  private ineligibilityLatLon(list: ProductObject[]): ProductObject[] {
     return list.filter(item => !(item.address.geoLocation.location.lat === 0 && item.address.geoLocation.location.lon === 0))
   }
 
-  eligibilityAreas(list: ProductObject[]): ProductObject[] {
+  private eligibilityAreas(list: ProductObject[]): ProductObject[] {
     return list.filter(item => item.pricingInfos.businessType === 'SALE' && item.usableAreas > 0 && Number(item.pricingInfos.price) / item.usableAreas > 3500)
   }
 
-  eligibilityValue(list: ProductObject[]): ProductObject[] {
-    return list.filter(item => {
-      console.log('1 - ', Number(item.pricingInfos.monthlyCondoFee), ' - ', item.usableAreas)
-      // console.log('2 - ', !(Number(item.pricingInfos.monthlyCondoFee) >= 0.3 * Number(item.pricingInfos.rentalTotalPrice)))
-      return !Number.isNaN(Number(item.pricingInfos.monthlyCondoFee)) && !(Number(item.pricingInfos.monthlyCondoFee) >= 0.3 * Number(item.pricingInfos.rentalTotalPrice))
-    })
+  private eligibilityValue(list: ProductObject[]): ProductObject[] {
+    return list.filter(item => !Number.isNaN(Number(item.pricingInfos.monthlyCondoFee)) && !(Number(item.pricingInfos.monthlyCondoFee) >= 0.3 * Number(item.pricingInfos.rentalTotalPrice)))
   }
 
-  boundingBox(location: { lon: number, lat: number }): boolean {
+  private boundingBox(location: { lon: number, lat: number }): boolean {
     let result = location.lon >= this.minlon && location.lon <= this.maxlon && location.lat >= this.minlat && location.lon <= this.maxlat;
     return result
+  }
+
+  findProducts(id: string): ProductObject {
+    return this.products.find(item => item.id === id);
   }
 }

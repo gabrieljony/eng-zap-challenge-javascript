@@ -13,14 +13,8 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () => import('./components/products/products.module').then(m => m.ProductsModule),
-    // data: { preload: true }
   },
-  {
-    path: 'product',
-    loadChildren: () => import('./components/product/product.module').then(m => m.ProductModule),
-    // data: { preload: true }
-  },
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

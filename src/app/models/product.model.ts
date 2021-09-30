@@ -15,12 +15,12 @@ export interface Addres {
 }
 
 export interface PricingInfo {
-  period: string;
-  yearlyIptu: string;
+  period?: string;
+  yearlyIptu?: string;
   price: string;
-  rentalTotalPrice: string;
+  rentalTotalPrice?: string;
   businessType: string;
-  monthlyCondoFee: string;
+  monthlyCondoFee?: string;
 }
 
 export interface ProductObject {

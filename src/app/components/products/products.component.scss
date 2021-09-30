@@ -16,6 +16,9 @@
     background: #fff;
     border-radius: 4px;
     transition: all 0.2s;
+    a {
+      cursor: pointer;
+    }
     .image {
         display: flex;
         justify-content: center;
