@@ -1,6 +1,7 @@
 <section class="produtos-container">
   <div class="produtos" *ngIf="!loading;else load">
-    <div class="produto" *ngFor="let item of collectionProducts" [routerLink]="['/products', 'vivareal' ]">
+    <app-pagination [productsTotal]="collectionProducts.length"></app-pagination>
+    <div class="produto" *ngFor="let item of products" [routerLink]="['/products', 'vivareal' ]">
       <a (click)="navigateProduct(item.id)">
         <div class="image">
           <img [src]="item.images[0]" alt="" />
@@ -37,7 +38,6 @@
         </div>
       </a>
     </div>
-    <app-pagination [productsTotal]="collectionProducts.length"></app-pagination>
   </div>
   <ng-template #load>
     <app-page-loading></app-page-loading>

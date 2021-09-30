@@ -11,6 +11,7 @@ import { ProductsService } from 'src/app/service/products.service';
 export class ProductsComponent implements OnInit {
 
   collectionProducts = new Array();
+  products = new Array();
   portal: string;
   page: number;
   sub: Subscription;
@@ -31,6 +32,8 @@ export class ProductsComponent implements OnInit {
     this.sub = this.route.queryParams.subscribe(
       (queryParams: any) => {
         this.page = queryParams['page'];
+        this.products = this.collectionProducts.slice((this.page - 1) * 20, 20 * this.page)
+        console.log('this.products: ', this.products)
       }
     )
 
@@ -40,6 +43,7 @@ export class ProductsComponent implements OnInit {
     console.log('portal', portal)
     await this.productsService.getListProducts(portal).then((item) => {
       this.collectionProducts = item;
+      this.products = this.collectionProducts.slice((this.page - 1) * 20, 20 * this.page)
       this.loading = false;
     });
   }
