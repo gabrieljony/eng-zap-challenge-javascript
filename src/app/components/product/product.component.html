@@ -1,1 +1,46 @@
-<p>product works!</p>
+<div class="container">
+  <div class="banner">
+    <img [src]="product.images[0]" alt="imóvel">
+  </div>
+  <div class="content">
+    <div class="titulo">
+      <h2>Apartamento para {{ product.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}</h2>
+      <p class="preco">{{ product.pricingInfos.price | currency }}</p>
+    </div>
+    <div class="info">
+      <div>
+        <h2>
+          {{ product.usableAreas }}
+        </h2>
+        <p>m²</p>
+      </div>
+      <div>
+        <h2>
+          {{ product.bedrooms }}
+        </h2>
+        <p>{{ product.bedrooms > 1 ? 'quartos' : 'quarto' }}</p>
+      </div>
+      <div>
+        <h2>
+          {{ product.bathrooms }}
+        </h2>
+        <p>{{ product.bathrooms > 1 ? 'banheiros' : 'banheiro' }}</p>
+      </div>
+      <div>
+        <h2>
+          {{ product.parkingSpaces }}
+        </h2>
+        <p>{{ product.parkingSpaces > 1 ? 'garagens' : 'garagem' }}</p>
+      </div>
+    </div>
+    <div class="address">
+      <p>{{ product.address.neighborhood + ' - ' + product.address.city }}</p>
+    </div>
+
+    <div class="pricingInfos">
+      <p>IPTU: {{ product.pricingInfos.yearlyIptu | currency }}</p>
+      <p>Taxa mensal do condomínio: {{ product.pricingInfos.monthlyCondoFee | currency }}</p>
+    </div>
+
+  </div>
+</div>
