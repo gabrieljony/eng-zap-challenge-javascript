@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  height: 100%;
+  .sliders {
+    position: relative;
+    width: 30vw;
+    height: 15vw;
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 100%;
+      height: 100%;
+
+      .btn{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 40%;
+        button{
+          cursor: pointer;
+          font-size: 2rem;
+          color: var(--white);
+          border: none;
+          background-color: transparent;
+          margin: 10px;
+        }
+      }
+
+      .img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+

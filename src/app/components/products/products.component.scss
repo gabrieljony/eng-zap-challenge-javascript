@@ -16,9 +16,16 @@
     background: #fff;
     border-radius: 4px;
     transition: all 0.2s;
-    a {
-      cursor: pointer;
+
+    .detailDiv{
+      display: flex;
+      .detail{
+        cursor: pointer;
+        width: 100%;
+
+      }
     }
+
     .image {
         display: flex;
         justify-content: center;
@@ -30,17 +37,7 @@
     font-size: 2rem;
    }
 
-  .produto:hover {
-    box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
-    transform: scale(1.1);
-    position: relative;
-    z-index: 1;
-  }
 
-  .produto img {
-    border-radius: 4px;
-    margin-bottom: 20px;
-  }
 
   .titulo {
     color: var(--gray-900);

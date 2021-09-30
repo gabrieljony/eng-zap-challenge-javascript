@@ -49,7 +49,6 @@ export class ProductsComponent implements OnInit {
   }
 
   navigateProduct(id: string) {
-    console.log('id', id)
     this.router.navigate([`/products/${this.portal}`, id], { relativeTo: this.route })
   }
 
