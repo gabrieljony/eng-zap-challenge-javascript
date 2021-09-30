@@ -38,6 +38,10 @@
         </div>
       </a>
     </div>
+
+    <div class="noProducts" *ngIf="products.length == 0">
+      <p>Não foi encontrado imóvel.</p>
+    </div>
   </div>
   <ng-template #load>
     <app-page-loading></app-page-loading>
