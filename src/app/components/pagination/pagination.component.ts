@@ -36,15 +36,14 @@ export class PaginationComponent implements OnInit {
 
   paginas() {
     const current = Number(this.page);
-    const range = 9;
-    const offset = Math.ceil(range / 2);
+    const range = 5;
     const total = this.paginasTotal();
     const pagesArray = [];
 
     for (let i = 1; i <= total; i++) {
       pagesArray.push(i);
     }
-    pagesArray.splice(0, current - offset);
+    pagesArray.splice(0, current - range);
     pagesArray.splice(range, total);
     return pagesArray;
   }
