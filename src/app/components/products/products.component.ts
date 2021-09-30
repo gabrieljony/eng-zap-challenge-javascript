@@ -10,10 +10,12 @@ import { ProductsService } from 'src/app/service/products.service';
 })
 export class ProductsComponent implements OnInit {
 
-  collectionProducts = new Array()
+  collectionProducts = new Array();
   portal: string;
   page: number;
   sub: Subscription;
+  id;
+  loading: boolean = true;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -38,8 +40,7 @@ export class ProductsComponent implements OnInit {
     console.log('portal', portal)
     await this.productsService.getListProducts(portal).then((item) => {
       this.collectionProducts = item;
-
-      console.log(this.collectionProducts);
+      this.loading = false;
     });
   }
 
