@@ -1,3 +1,4 @@
+import { PaginationComponent } from './../pagination/pagination.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,7 +9,7 @@ import { ProductComponent } from '../product/product.component';
 import { PageLoadingComponent } from '../page-loading/page-loading.component';
 
 @NgModule({
-  declarations: [ProductsComponent, ProductComponent, PageLoadingComponent],
+  declarations: [ProductsComponent, ProductComponent, PageLoadingComponent, PaginationComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule

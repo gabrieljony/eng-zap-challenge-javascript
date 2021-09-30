@@ -1,0 +1,7 @@
+<ul *ngIf="paginasTotal() > 1">
+  <!-- <a (click)="nextPage(1)">Primeira</a> -->
+  <li *ngFor="let pagina of paginas()">
+    <a (click)="nextPage(pagina)">{{ pagina }}</a>
+  </li>
+  <!-- <a (click)="nextPage(paginasTotal())">Última</a> -->
+</ul>
