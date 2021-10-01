@@ -27,6 +27,9 @@ export class ProductsComponent implements OnInit {
     if (this.route.snapshot.params['slug']) {
       this.portal = this.route.snapshot.params['slug'];
       this.getListProducts(this.portal);
+      // setInterval(() => {
+      //
+      // }, 100000)
     }
 
     this.sub = this.route.queryParams.subscribe(

@@ -1,27 +1,50 @@
-# Zapmais
+<p align="center">
+  <a href="https://angular.io/">
+    <img alt="angular" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" width="100" />
+  </a>
+</p>
+<h2 align="center">
+  Desafio olxbr para vaga front-end em Angular - Javascript
+</h2>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+## eng-zap-challenge-javascript
 
-## Development server
+Projeto gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 10.0.1.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 🚀 Angular - Frontend
 
-## Code scaffolding
+1.  **Instale as dependências**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ```shell
+    cd eng-zap-challenge-javascript/
+    npm install
+    ```
 
-## Build
+2.  **Start o projeto**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    ```shell
+    ng serve
+    ou
+    npm run start
+    ```
+    Navegue para o endereço: `http://localhost:4200/`
 
-## Running unit tests
+3.  **Build**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```shell
+    ng build
+    ```
+    O pacote estará no diretório `dist/`.
 
-## Running end-to-end tests
+## 💻 Layout
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### /home
+![home](Screenshot_0.png)
+### /products/:PORTAL?page=1
+![home](Screenshot_1.png)
+### /products/:PORTAL/:ID
+![home](Screenshot_2.png)
+### /page-not-found
+![home](Screenshot_3.png)
+### loading
+![home](Screenshot_0.png)
