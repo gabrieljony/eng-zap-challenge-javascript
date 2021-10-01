@@ -36,6 +36,11 @@ Projeto gerado com o [Angular CLI](https://github.com/angular/angular-cli) vers�
     ```
     O pacote estará no diretório `dist/`.
 
+## 🌐 Link
+
+[Desafio Olx](https://olxbr.github.io/cultura/challenges/frontend.html)
+[Base de Dados - data.json](http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources/source-1.json)
+
 ## 💻 Layout
 
 ### /home
@@ -47,4 +52,4 @@ Projeto gerado com o [Angular CLI](https://github.com/angular/angular-cli) vers�
 ### /page-not-found
 ![home](Screenshot_3.png)
 ### loading
-![home](Screenshot_0.png)
+![home](Screenshot_4.png)
