@@ -2,40 +2,13 @@
   .banner{
     display: flex;
     justify-content: center;
-    height: 300px;
   }
   .content {
     max-width: 1000px;
     margin: 0 auto;
     background-color: var(--white);
     padding: 1rem;
-    height: calc(100vh - 300px - 5rem);
-    .titulo {
-      color: var(--gray-900);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      .preco {
-        color: var(--yellow);
-        font-weight: bold;
-        font-size: 2rem;
-      }
-    }
-
-    .info {
-      color: var(--gray-300);
-      font-weight: bold;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin: 1rem 0;
-      div {
-        text-align: center;
-        h2{
-          font-size: 3rem;
-        }
-      }
-    }
+    height: calc(100vh - 5rem);
 
     .address{
       color: var(--gray-900);
@@ -101,5 +74,7 @@
 }
 
 @media (max-width: 720px){
-
+  .banner{
+    max-width: 1120px;
+  }
 }

@@ -1,0 +1,33 @@
+.titulo {
+  color: var(--gray-900);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .preco {
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+.info {
+  color: var(--gray-300);
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem 0;
+  div {
+    text-align: center;
+    h2{
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (max-width: 720px){
+  .titulo {
+    flex-direction: column;
+    align-items: start;
+  }
+}

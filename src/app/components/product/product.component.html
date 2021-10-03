@@ -3,36 +3,7 @@
     <app-slide-show [collectionImage]="product.images"></app-slide-show>
   </div>
   <div class="content">
-    <div class="titulo">
-      <h2>Apartamento para {{ product.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}</h2>
-      <p class="preco">{{ product.pricingInfos.price | currency }}</p>
-    </div>
-    <div class="info">
-      <div>
-        <h2>
-          {{ product.usableAreas }}
-        </h2>
-        <p>m²</p>
-      </div>
-      <div>
-        <h2>
-          {{ product.bedrooms }}
-        </h2>
-        <p>{{ product.bedrooms > 1 ? 'quartos' : 'quarto' }}</p>
-      </div>
-      <div>
-        <h2>
-          {{ product.bathrooms }}
-        </h2>
-        <p>{{ product.bathrooms > 1 ? 'banheiros' : 'banheiro' }}</p>
-      </div>
-      <div>
-        <h2>
-          {{ product.parkingSpaces }}
-        </h2>
-        <p>{{ product.parkingSpaces > 1 ? 'garagens' : 'garagem' }}</p>
-      </div>
-    </div>
+    <app-info-product [product]="product"></app-info-product>
     <div class="address">
       <p *ngIf="product.address.neighborhood;else noNeighborhood">{{ product.address.neighborhood + ' - ' +
         product.address.city }}</p>
@@ -58,6 +29,7 @@
     </div>
     <hr>
     <div class="props">
+      <span>Portal: </span>
       <a class="vivareal" *ngIf="portal === 'vivareal'">
         <img src="../../../assets/images/logo_vivareal.png" alt="logo vivareal">
       </a>

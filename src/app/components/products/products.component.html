@@ -7,36 +7,7 @@
       </div>
       <div class="detailDiv">
         <a class="detail" (click)="navigateProduct(item.id)">
-          <div class="titulo">
-            <h2>Apartamento para {{ item.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}</h2>
-            <p class="preco">{{ item.pricingInfos.price | currency }}</p>
-          </div>
-          <div class="info">
-            <div>
-              <h2>
-                {{ item.usableAreas }}
-              </h2>
-              <p>m²</p>
-            </div>
-            <div>
-              <h2>
-                {{ item.bedrooms }}
-              </h2>
-              <p>{{ item.bedrooms > 1 ? 'quartos' : 'quarto' }}</p>
-            </div>
-            <div>
-              <h2>
-                {{ item.bathrooms }}
-              </h2>
-              <p>{{ item.bathrooms > 1 ? 'banheiros' : 'banheiro' }}</p>
-            </div>
-            <div>
-              <h2>
-                {{ item.parkingSpaces }}
-              </h2>
-              <p>{{ item.parkingSpaces > 1 ? 'garagens' : 'garagem' }}</p>
-            </div>
-          </div>
+          <app-info-product [product]="item"></app-info-product>
         </a>
       </div>
     </div>

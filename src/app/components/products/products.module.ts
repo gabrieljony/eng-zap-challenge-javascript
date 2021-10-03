@@ -1,3 +1,4 @@
+import { InfoProductComponent } from './../info-product/info-product.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +11,7 @@ import { PageLoadingComponent } from '../page-loading/page-loading.component';
 import { SlideShowComponent } from '../slide-show/slide-show.component';
 
 @NgModule({
-  declarations: [ProductsComponent, ProductComponent, PageLoadingComponent, PaginationComponent, SlideShowComponent],
+  declarations: [ProductsComponent, ProductComponent, PageLoadingComponent, PaginationComponent, SlideShowComponent, InfoProductComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule

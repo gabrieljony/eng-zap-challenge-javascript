@@ -1,68 +1,47 @@
 .produtos-container {
     max-width: 1000px;
     margin: 0 auto;
-  }
 
-  .produtos {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 50px;
-    margin: 30px;
-  }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 50px;
+      // margin: 30px;
+      .produto {
+        padding: 10px;
+        background: #fff;
+        border-radius: 4px;
+        transition: all 0.2s;
 
-  .produto {
-    box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
-    padding: 10px;
-    background: #fff;
-    border-radius: 4px;
-    transition: all 0.2s;
+        .image {
+          display: flex;
+          justify-content: center;
+      }
 
-    .detailDiv{
-      display: flex;
-      .detail{
-        cursor: pointer;
-        width: 100%;
+        .detailDiv{
+          display: flex;
+          .detail{
+            cursor: pointer;
+            width: 100%;
+
+          }
+        }
+
 
       }
-    }
 
-    .image {
-        display: flex;
-        justify-content: center;
-    }
-  }
-
-  .noProducts{
-    text-align: center;
-    font-size: 2rem;
-   }
-
-
-
-  .titulo {
-    color: var(--gray-900);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .preco {
-      color: var(--yellow);
-      font-weight: bold;
-      font-size: 2rem;
+      .noProducts{
+        text-align: center;
+        font-size: 2rem;
+       }
     }
   }
 
-  .info {
-    color: var(--gray-300);
-    font-weight: bold;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 1rem 0;
-    div {
-      text-align: center;
-      h2{
-        font-size: 3rem;
-      }
+
+  @media (max-width: 720px){
+    .produtos-container {
+      width: 50px;
+      margin: 10px;
     }
   }
 

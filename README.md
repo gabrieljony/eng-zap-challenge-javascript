@@ -11,6 +11,10 @@
 
 Projeto gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 10.0.1.
 
+## Objetivo do projeto
+
+*Informações de imóveis dos portais vivareal e zap.*
+
 ## 🚀 Angular - Frontend
 
 1.  **Instale as dependências**
