@@ -1,6 +1,17 @@
 {
   "name": "zapmais",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Desafio olxbr para vaga front-end em Angular - Javascript",
+  "author": {
+    "email": "gabriel_jony@hotmail.com",
+    "name": "Gabriel Jony Borges Silva",
+    "url": ""
+  },
+  "engines": {
+    "node": "12.18.2",
+    "vscode": "^1.22.0",
+    "npm": "6.14.5"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
