@@ -1,24 +1,12 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-info-product',
   templateUrl: './info-product.component.html',
   styleUrls: ['./info-product.component.scss']
 })
-export class InfoProductComponent implements OnInit {
+export class InfoProductComponent {
 
   @Input() product = null;
-
-  constructor() { }
-
-  ngOnInit() {
-
-    console.log('this.product', this.product)
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('changes', changes)
-
-  }
 
 }

@@ -1,19 +1,6 @@
-<div class="container">
-  <div class="sliders">
-    <ng-container *ngFor="let img of img_list; let i = index">
-      <div class="slider" *ngIf="current == i" @fade>
-        <img class="img" [src]="img">
-        <div class="btn">
-          <button (click)="previous()">&#10094;</button>
-          <button (click)="next()">&#10095;</button>
-        </div>
-      </div>
-    </ng-container>
-  </div>
-</div>
-<div>
-</div>
-<br>
-<br>
-<br>
-<br>
+<carousel>
+  <slide *ngFor="let img of img_list; let i = index">
+    <img [src]="img" alt="first slide"
+      style="display: block; width: 100%;">
+  </slide>
+</carousel>

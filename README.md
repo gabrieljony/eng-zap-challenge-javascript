@@ -17,7 +17,7 @@ Projeto gerado com o [Angular CLI](https://github.com/angular/angular-cli) vers�
 
 ## 🚀 Angular - Frontend
 
-1.  **Instale as dependências**
+1.  **Instale as dependências, após o clone do projeto**
 
     ```shell
     cd eng-zap-challenge-javascript/

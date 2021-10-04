@@ -5,11 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './page-loading.component.html',
   styleUrls: ['./page-loading.component.scss']
 })
-export class PageLoadingComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class PageLoadingComponent {
 
 }

@@ -1,4 +1,4 @@
-.container {
+.zap-container {
     max-width: 1000px;
     margin: 0 auto;
 
@@ -33,7 +33,7 @@
   }
 
   @media (max-width: 720px){
-    .container{
+    .zap-container{
       margin: 0 1rem;
       h1 {
         text-align: center;

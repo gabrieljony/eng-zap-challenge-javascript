@@ -23,7 +23,6 @@ export class ProductsComponent implements OnInit {
     private productsService: ProductsService) { }
 
   ngOnInit() {
-    console.log(this.route.queryParams)
     if (this.route.snapshot.params['slug']) {
       this.portal = this.route.snapshot.params['slug'];
       this.getListProducts(this.portal);
@@ -36,14 +35,12 @@ export class ProductsComponent implements OnInit {
       (queryParams: any) => {
         this.page = queryParams['page'];
         this.products = this.collectionProducts.slice((this.page - 1) * 20, 20 * this.page)
-        console.log('this.products: ', this.products)
       }
     )
 
   }
 
   async getListProducts(portal: string) {
-    console.log('portal', portal)
     await this.productsService.getListProducts(portal).then((item) => {
       this.collectionProducts = item;
       this.products = this.collectionProducts.slice((this.page - 1) * 20, 20 * this.page)
