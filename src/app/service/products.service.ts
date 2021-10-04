@@ -1,13 +1,14 @@
-import { ProductObject } from './../models/product.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from './../../environments/environment';
+import { ProductObject } from './../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  private url: string = "http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources/source-1.json"
+  private url: string;
 
   private minlon = -46.693419;
   private minlat = -23.568704;
@@ -16,7 +17,9 @@ export class ProductsService {
 
   private products: ProductObject[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.url = `${environment.API_URL}`;
+  }
 
   getListProducts(type: string = null) {
     return this.http
